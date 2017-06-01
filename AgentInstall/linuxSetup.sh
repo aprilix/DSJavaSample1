@@ -30,7 +30,7 @@ sudo apt install -y maven ant gradle
 
 # Install .NET Core & Agent
 # Install Prereq
-sudo apt install -y dotnet-dev-1.0.4
+sudo apt-get install dotnet-dev-1.0.4
 
 # Download agent
 dl=~/Downloads
@@ -54,3 +54,13 @@ tar xzf ~/Downloads/vsts-agent-ubuntu.16.04-x64-2.104.1.tar.gz
 
 # Prime the .Env file for the agent
 ./env.sh
+
+# Not all machines will have docker
+if [ -z "$(which docker)" ]; then
+   echo docker=$(which docker) >> .env
+fi
+
+#configure npm
+sudo chown -R $USER:$GROUP ~/.npm
+sudo chown -R $USER:$GROUP ~/.config
+
