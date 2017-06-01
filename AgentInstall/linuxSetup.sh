@@ -30,7 +30,7 @@ sudo apt install -y maven ant gradle
 
 # Install .NET Core & Agent
 # Install Prereq
-sudo apt-get install dotnet-dev-1.0.4
+sudo apt-get install -y dotnet-dev-1.0.4
 
 # Download agent
 dl=~/Downloads
